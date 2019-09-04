@@ -30,7 +30,8 @@ steps:
 
 - task: CopyFiles@2
   inputs:
-    contents: '$(Build.SourcesDirectory)\source\OctoFX.Database\Scripts'
+    sourceFolder: '$(Build.SourcesDirectory)\source\OctoFX.Database\Scripts'
+    contents: '*'
     targetFolder: $(Build.ArtifactStagingDirectory)\DbUp
 
 - task: PublishBuildArtifacts@1
