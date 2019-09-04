@@ -27,3 +27,8 @@ steps:
     msbuildArgs: '/t:Build /p:RunOctoPack=true /p:OctoPackPublishPackageToFileShare="$(build.artifactStagingDirectory)"'
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    pathToPublish: $(Build.ArtifactStagingDirectory)
+    artifactName: OctoFX-Build-Outputs
